@@ -113,6 +113,10 @@ body {
     cursor: pointer;
 }
 
+.complete .table-cell:hover {
+    background-color: #E8E8E8;
+}
+
 .todo-title {
     text-align: left;
     text-overflow: ellipsis;
@@ -150,18 +154,17 @@ body {
     outline: 0;
 }
 
-.toggle-checked,
+.toggle-complete,
 .remove-todo {
     width: 30px;
     font-size: 20px;
 }
 
-.toggle-checked {
+.toggle-complete {
     border-right: 1px solid #66d1ed;
-
 }
 
-.toggle-checked:before {
+.toggle-complete:before {
     font-family: 'icomoon';
     speak: none;
     font-style: normal;
@@ -182,7 +185,7 @@ body {
     background-color: #f1f0f0;
 }
 
-.complete .toggle-checked:before {
+.complete .toggle-complete:before {
     color: #5fd9ad;
     content: "\e603";
 }
