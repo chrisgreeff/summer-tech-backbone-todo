@@ -31,9 +31,9 @@
     <script type="text/template" id="todo-item-template">
         <div id="<%= id %>" class="todo-item <%= complete ? 'complete' : '' %>">
             <a class="toggle-checked table-cell" href="javascript:void(0)"></a>
-            <div class="table-cell todo-title toggle-editing <%= editing ? 'editing' : '' %>">
-                <label class="<%= editing ? 'hidden' : '' %>"><%= title %></label>
-                <input class="todo-title-edit" type="<%= editing ? 'text' : 'hidden' %>" value="<%= title %>">
+            <div class="table-cell todo-title toggle-edit <%= editing ? 'editing' : '' %>">
+                <span class="todo-label"><%= title %></span>
+                <input class="todo-title-edit" type="text" value="<%= title %>">
             </div>
             <a class="remove-todo table-cell icon-remove" href="javascript:void(0)"></a>
         </div>

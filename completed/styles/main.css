@@ -42,10 +42,6 @@ body {
     content: "\e604";
 }
 
-.hidden {
-    display: none !important;
-}
-
 #todo-app {
     min-height: 100%;
     text-align: center;
@@ -76,10 +72,6 @@ body {
     padding: 0;
     width: 486px;
     margin-top: 30px;
-
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
 }
 
 .todos {
@@ -104,7 +96,8 @@ body {
     border-top: 1px solid #66d1ed;
 }
 
-.todo-item-container:first-child {
+.todo-item-container:first-child,
+.todo-item:first-child, {
     border-top: none;
 }
 
@@ -132,7 +125,16 @@ body {
     box-shadow: 0 0 3px #4db2e7 inset;
 }
 
+.todo-title.editing .todo-label {
+    display: none !important;
+}
+
+.todo-title.editing .todo-title-edit {
+    display: inline-block !important;
+}
+
 .todo-title-edit {
+    display: none;
     background: none;
     border: none;
     text-decoration: none;
@@ -141,6 +143,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: Nunito, sans-serif;
+    width: 100%;
 }
 
 .todo-title-edit:focus {
@@ -156,9 +159,6 @@ body {
 .toggle-checked {
     border-right: 1px solid #66d1ed;
 
-    -webkit-border-radius: 5px 0 0 5px;
-    -moz-border-radius: 5px 0 0 5px;
-    border-radius: 5px 0 0 5px;
 }
 
 .toggle-checked:before {
@@ -178,12 +178,16 @@ body {
     content: "\e604";
 }
 
+.complete {
+    background-color: #f1f0f0;
+}
+
 .complete .toggle-checked:before {
     color: #5fd9ad;
     content: "\e603";
 }
 
-.complete label {
+.complete .todo-label {
     text-decoration: line-through;
     color: gray;
 }
@@ -191,10 +195,6 @@ body {
 .remove-todo {
     color: #f5756c;
     border-left: 1px solid #66d1ed;
-
-    -webkit-border-radius: 0 5px 5px 0;
-    -moz-border-radius: 0 5px 5px 0;
-    border-radius: 0 5px 5px 0;
 }
 
 .new-todo-input {
@@ -208,9 +208,6 @@ body {
     display: inline-block;
     border: 1px solid white;
 
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -252,9 +249,6 @@ body {
     border-width: 1px;
     border-style: solid;
 
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
 
     -webkit-transition-property: box-shadow, background-color, color;
     -moz-transition-property: box-shadow, background-color, color;

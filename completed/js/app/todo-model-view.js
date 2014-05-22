@@ -10,9 +10,10 @@
         template: _.template($('#todo-item-template').html()),
 
         events: {
-            'click .remove-todo': 'removeTodo',
-            'click .toggle-checked': 'toggleComplete',
-            'click .toggle-editing': 'toggleEditing'
+            'click .remove-todo':     'removeTodo',
+            'click .toggle-checked':  'toggleComplete',
+            'click .toggle-edit':     'toggleEditing',
+            'blur  .todo-title-edit': 'updateTitle'
         },
 
         initialize: function() {
@@ -31,23 +32,13 @@
 
             if (todoTitleEditNode.attr('type') === 'text') {
                 todoTitleEditNode.focus();
-
-                todoTitleEditNode.blur([this], function (event) {
-                    var todoView  = event.data[0],
-                        inputNode = $(this),
-                        newTitle  = inputNode.val(),
-                        todoConfig;
-
-                    todoView.toggleEditing();
-
-                    if (newTitle) {
-                        todo.save({
-                            title: newTitle
-                        });
-                    }
-                    
-                });
             }
+        },
+
+        removeTodo: function(event) {
+            App.Vent.trigger('remove-todo', this.model);
+
+            event.preventDefault();
         },
 
         toggleComplete: function() {
@@ -58,10 +49,17 @@
             this.model.toggleEditing();
         },
 
-        removeTodo: function(event) {
-            App.Vent.trigger('remove-todo', this.model);
+        updateTitle: function () {
+            var editTitleNode = this.$el.find('.todo-title-edit'),
+                newTitle      = editTitleNode.val();
 
-            event.preventDefault();
+            this.toggleEditing();
+
+            if (newTitle) {
+                this.model.save({
+                    title: newTitle
+                });
+            }
         }
 
     });
