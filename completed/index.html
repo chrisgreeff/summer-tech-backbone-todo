@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Todo App</title>
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="js/vendor/jquery-2.1.0.min.js"></script>
+    <script src="js/vendor/underscore-1.6.0.min.js"></script>
+    <script src="js/vendor/backbone-1.1.2.min.js"></script>
+    <script src="js/vendor/localforage.min.js"></script>
+    <script src="js/vendor/backbone.localforage.min.js"></script>
+</head>
+<body>
+    <main id="todo-app">
+        <section class="todo-app-container">
+            <header class="todo-app-header">
+                <h1>My Todos App</h1>
+            </header>
+            <form id="new-todo">
+                <input class="new-todo-input" type="text" placeholder="What do I need to do?">
+                <button class="new-todo-btn" type="submit" title="Create Todo">
+                    Create
+                </button>
+            </form>
+            <div id="todo-list-container"></div>
+        </section>
+    </main>
+
+    <!-- Todo Item Template -->
+    <script type="text/template" id="todo-item-template">
+        <div id="<%= id %>" class="todo-item <%= complete ? 'complete' : '' %>">
+            <a class="toggle-checked table-cell" href="javascript:void(0)"></a>
+            <div class="table-cell todo-title toggle-editing <%= editing ? 'editing' : '' %>">
+                <label class="<%= editing ? 'hidden' : '' %>"><%= title %></label>
+                <input class="todo-title-edit" type="<%= editing ? 'text' : 'hidden' %>" value="<%= title %>">
+            </div>
+            <a class="remove-todo table-cell icon-remove" href="javascript:void(0)"></a>
+        </div>
+    </script>
+
+    <script src="js/app/app.js"></script>
+    <script src="js/app/vent.js"></script>
+    <script src="js/app/todo-model.js"></script>
+    <script src="js/app/todo-model-view.js"></script>
+    <script src="js/app/todo-collection.js"></script>
+    <script src="js/app/todo-collection-view.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

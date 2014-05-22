@@ -1,0 +1,286 @@
+html,
+body {
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot?kgoq15');
+    src:url('fonts/icomoon.eot?#iefixkgoq15') format('embedded-opentype'),
+        url('fonts/icomoon.woff?kgoq15') format('woff'),
+        url('fonts/icomoon.ttf?kgoq15') format('truetype'),
+        url('fonts/icomoon.svg?kgoq15#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-remove:before {
+    content: "\e600";
+}
+.icon-checked:before {
+    color: #5fd9ad;
+    content: "\e603";
+}
+.icon-unchecked:before {
+    color: gray;
+    content: "\e604";
+}
+
+.hidden {
+    display: none !important;
+}
+
+#todo-app {
+    min-height: 100%;
+    text-align: center;
+
+    background-color: #e3e4e6;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66d1ed), color-stop(100%, #658ded)),#65afed;
+    background: -webkit-linear-gradient(#66d1ed,#658ded),#65afed;
+    background: -moz-linear-gradient(#66d1ed,#658ded),#65afed;
+    background: linear-gradient(#66d1ed,#658ded),#65afed;
+}
+
+.todo-app-container {
+    padding-top: 100px;
+}
+
+.todo-app-header {
+    color: white;
+}
+
+.todo-app-header h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#todo-list-container {
+    background-color: white;
+    display: inline-block;
+    padding: 0;
+    width: 486px;
+    margin-top: 30px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.todos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.todo-item {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 60px;
+    position: relative;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.todo-item-container {
+    border-top: 1px solid #66d1ed;
+}
+
+.todo-item-container:first-child {
+    border-top: none;
+}
+
+.table-cell {
+    text-decoration: none;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+.table-cell:hover {
+    background-color: #E5FAFF;
+    cursor: pointer;
+}
+
+.todo-title {
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.todo-title.editing {
+    -webkit-box-shadow: 0 0 3px #4db2e7 inset;
+    -moz-box-shadow: 0 0 3px #4db2e7 inset;
+    box-shadow: 0 0 3px #4db2e7 inset;
+}
+
+.todo-title-edit {
+    background: none;
+    border: none;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    font-family: Nunito, sans-serif;
+}
+
+.todo-title-edit:focus {
+    outline: 0;
+}
+
+.toggle-checked,
+.remove-todo {
+    width: 30px;
+    font-size: 20px;
+}
+
+.toggle-checked {
+    border-right: 1px solid #66d1ed;
+
+    -webkit-border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+.toggle-checked:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    color: gray;
+    content: "\e604";
+}
+
+.complete .toggle-checked:before {
+    color: #5fd9ad;
+    content: "\e603";
+}
+
+.complete label {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.remove-todo {
+    color: #f5756c;
+    border-left: 1px solid #66d1ed;
+
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.new-todo-input {
+    margin: 0 10px 10px 0;
+    resize: none;
+    font-size: 12px;
+    border-color: #3F4566;
+    width: 390px;
+
+    padding: 10px 15px;
+    display: inline-block;
+    border: 1px solid white;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    transition-property: all;
+
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+.new-todo-input:focus {
+    outline: 0;
+    border-color: #129FEA;
+}
+
+.new-todo-btn {
+    font-family: inherit;
+    font-size: 100%;
+    padding: .5em 1em;
+
+    margin: 0;
+    
+    border-color: white;
+    color: white;
+
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+    -webkit-transition-property: box-shadow, background-color, color;
+    -moz-transition-property: box-shadow, background-color, color;
+    transition-property: box-shadow, background-color, color;
+
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+
+    -webkit-transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+.new-todo-btn:focus {
+    -webkit-box-shadow: 0 0 3px #4db2e7 inset;
+    -moz-box-shadow: 0 0 3px #4db2e7 inset;
+    box-shadow: 0 0 3px #4db2e7 inset;
+    outline: none;
+}
+
+.new-todo-btn:active {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: white;
+    border-color: #66d1ed;
+    color: #66d1ed;
+}
