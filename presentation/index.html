@@ -48,21 +48,33 @@
                 </section>
 
                 <section>
+                    <h2>Before I begin</h2>
+                    <ul>
+                        <li class="fragment">Who has heard of JavaScript and HTML?</li>
+                        <li class="fragment">Who has done JavaScript and HTML?</li>
+                    </ul>
+                    <p>
+                        <img class="image fragment" src="images/its-so-beautiful.gif" style="border: none; box-shadow: none; background: none;">
+                    </p>
+                </section>
+
+                <section>
                     <h2>Hi!</h2>
                     <ul>
-                        <li class="fragment" data-fragment-index="1">Graduated from Auckland University in 2012</li>
-                        <li class="fragment" data-fragment-index="2">
-                            Currently working at <span class="fragment highlight-green" data-fragment-index="2">Vend</span> (P.S. They're awesome!)
+                        <li class="fragment" data-fragment-index="1">
+                            Currently working at <span class="fragment highlight-green" data-fragment-index="1">Vend</span> (P.S. They're awesome!)
                         </li>
+                        <li class="fragment">Graduated from Auckland University in 2012</li>
                         <li class="fragment">Been coding for about 5 years</li>
                         <li class="fragment">Fell in love with JavaScript over 2 years ago</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h2>Covering...</h2>
+                    <h2>Covering</h2>
                     <ul>
-                        <li class="fragment">MVC - You might have heard of it...</li>
+                        <li class="fragment">JavaScript...</li>
+                        <li class="fragment">Basics of MVC</li>
                         <li class="fragment">How Backbone.js does it</li>
                         <li class="fragment">Creating our own Todo App</li>
                     </ul>
@@ -76,7 +88,7 @@
                         <li>C is for <span class="fragment" data-fragment-index="3"><span class="fragment highlight-red" data-fragment-index="3">Collection</span></span></li>
                     </ul>
                     <p class="fragment" style="margin-top: 30px;"><small>
-                        There are Controllers, But in this case, we are simplifying things by just talking about interactions between a collection of models and their views via custom and DOM events
+                        There are Controllers, but in this case, we are simplifying things by just talking about interactions between a collection of models and their views via custom and DOM events
                     </small></p>
                 </section>
 
@@ -147,7 +159,42 @@
                 <section>
                     <section data-transition="none">
                         <h2>View</h2>
-                        <p>A link between the model/collection and the... <span class="fragment" data-fragment-index="1"><span class="fragment highlight-blue" data-fragment-index="1">DOM!</span></span></p>
+                        <p>A link between the model/collection and the... 
+                            <span class="fragment" data-fragment-index="1">
+                                <span class="fragment highlight-blue" data-fragment-index="1">
+                                    DOM!
+                                </span>
+                            </span>
+                        </p>
+                    </section>
+
+                    <section data-transition="none">
+                        <h2>What is the DOM...?</h2>
+                         <ul>
+                            <li class="fragment">Document Object Model</li>
+                            <li class="fragment">What you see in the browser! (Kind of)</li>
+                            <li class="fragment">It's the HTML markup (Kind of)</li>
+                        </ul>
+
+                        <pre class="fragment">
+                            <code class="html" data-trim contenteditable>
+<div class="todo-app-container">
+
+    <h1>My Todo App</h1>
+
+    <form id="new-todo">
+        <input class="new-todo-input" type="text">
+        <button class="new-todo-btn" type="submit">Create</button>
+    </form>
+
+</div>
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section data-transition="none">
+                        <h2>View</h2>
+                        <p>A link between the model/collection and the... <span style="color: #1b91ff;">DOM!</span></p>
                         <ul>
                             <li class="fragment">Manipulate the DOM based on model state and attributes</li>
                             <li class="fragment">Updates models based on user interaction with the DOM</li>
