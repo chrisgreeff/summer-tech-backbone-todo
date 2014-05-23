@@ -51,9 +51,9 @@
             // associated with the model. In this case, in the label we want to pass the 'title'
             // of the todo (The same what that was done for `id`)
             -->
-            <div class="table-cell todo-title toggle-edit">
+            <div class="table-cell todo-title toggle-edit <%= editing ? 'editing' : '' %>">
                 <span class="todo-label"></span>
-                <input class="todo-title-edit" type="text" value="">
+                <input class="todo-title-edit" type="text" value="<%= title %>">
             </div>
 
             <a class="remove-todo table-cell icon-remove" href="javascript:void(0)"></a>
