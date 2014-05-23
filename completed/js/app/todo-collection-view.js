@@ -24,17 +24,19 @@
         initialize: function() {
             var todos = this.collection;
 
+            _.bindAll(this, 'renderTodo', 'removeTodo', 'removeTodoFromView');
+
             // This is the collections binding to the global `remove-todo` event that is fired from
             // the model when the remove button is clicked. From here the collection is delegated
             // the task of destroying the model, and removing it from the DOM.
-            App.Vent.bind('remove-todo', this.removeTodo, this);
+            App.Vent.bind('remove-todo', this.removeTodo);
 
             // Whenever a todo model is added to the collection, we render it.
-            todos.on('add', this.renderTodo, this);
+            todos.on('add', this.renderTodo);
 
             // Whenever a todo model is destroyed (removed from the collection), we remove it from
             // the DOM.
-            todos.on('destroy', this.removeTodoFromView, this);
+            todos.on('destroy', this.removeTodoFromView);
 
         },
 

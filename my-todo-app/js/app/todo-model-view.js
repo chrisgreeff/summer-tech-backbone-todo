@@ -1,4 +1,4 @@
-/*globals App, Backbone, _ */
+/*globals App, Backbone, _, $ */
 (function() {
     'use strict';
 
@@ -11,10 +11,9 @@
         template: _.template($('#todo-item-template').html()),
 
         events: {
-            'click .remove-todo':     'removeTodo',
             'click .toggle-complete': 'toggleComplete',
-            'click .toggle-edit':     'toggleEditing',
-            'blur  .todo-title-edit': 'updateTitle'
+            'click .remove-todo':     'removeTodo',
+            'click .toggle-edit':     'toggleEditing'
         },
 
         initialize: function() {
@@ -40,16 +39,6 @@
             }
         },
 
-        removeTodo: function() {
-            // 4a. TO COMPLETE
-            // --------------
-            // We're going to be a little bit different here. Rather than the model handling the
-            // model handling the remove itself, we want to fire a global event for the todo
-            // collection to pick up, and take over with handling destroying the todo, and
-            // removing it from the DOM. You can do that by using the `App.Vent.trigger();`
-            // function.
-        },
-
         toggleComplete: function() {
             // 3a. TO COMPLETE
             // --------------
@@ -58,6 +47,16 @@
             // `this.model`.
             // NOTE: Be sure to update the template! We want to add a `complete` class to
             // the .todo-item element whenever the `complete` attribute is true
+        },
+
+        removeTodo: function() {
+            // 4a. TO COMPLETE
+            // --------------
+            // We're going to be a little bit different here. Rather than the model handling the
+            // model handling the remove itself, we want to fire a global event for the todo
+            // collection to pick up, and take over with handling destroying the todo, and
+            // removing it from the DOM. You can do that by using the `App.Vent.trigger();`
+            // function.
         },
 
         toggleEditing: function() {
@@ -76,8 +75,9 @@
 
             // 6. TO COMPLETE
             // --------------
-            // Here's a challenge! So when we blur the input, we want to override the title
-            // of the todo that is associated with the view. See if you can do it!
+            // Here's a challenge! So when we blur (When the input loses focus) the input,
+            // we want to override the title of the todo that is associated with the view.
+            // See if you can do it!
         }
 
     });

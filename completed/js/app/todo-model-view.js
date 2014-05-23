@@ -25,8 +25,8 @@
 
         // Here we can specify DOM specific events that occur on our Todo item.
         events: {
-            'click .remove-todo':     'removeTodo',
             'click .toggle-complete': 'toggleComplete',
+            'click .remove-todo':     'removeTodo',
             'click .toggle-edit':     'toggleEditing',
             'blur  .todo-title-edit': 'updateTitle'
         },
@@ -56,15 +56,16 @@
             }
         },
 
-        // When the remove button is clicked, the model will fire a global `remove-todo` event for
-        // it's collection to pick up, and take care of destroying it, and removing it from the DOM.
-        removeTodo: function() {
-            App.Vent.trigger('remove-todo', this.model);
-        },
 
         // Toggle the models complete attribute.
         toggleComplete: function() {
             this.model.toggleComplete();
+        },
+
+        // When the remove button is clicked, the model will fire a global `remove-todo` event for
+        // it's collection to pick up, and take care of destroying it, and removing it from the DOM.
+        removeTodo: function() {
+            App.Vent.trigger('remove-todo', this.model);
         },
 
         // Toggle the models editing attribute.
