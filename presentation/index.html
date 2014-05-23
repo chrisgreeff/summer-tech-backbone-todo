@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>reveal.js - The HTML Presentation Framework</title>
+        <title>Todo MVC With Backbone</title>
 
         <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
         <meta name="author" content="Hakim El Hattab">
@@ -44,48 +44,50 @@
             <div class="slides">
                 <section>
                     <h2>Summer of Tech</h2>
-                    <h3>MVC wit Backbone</h3>
+                    <p>Throwing you into the deep end with JavaScript</p>
                 </section>
 
                 <section>
                     <h2>Hi!</h2>
-                    <p>Little about me...</p>
                     <ul>
-                        <li>Currently working at Vend (They're awesome!)</li>
-                        <li>Been coding for 5 years</li>
-                        <li>Fell in love with JavaScript over 2 years ago</li>
+                        <li class="fragment" data-fragment-index="1">Graduated from Auckland University in 2012</li>
+                        <li class="fragment" data-fragment-index="2">
+                            Currently working at <span class="fragment highlight-green" data-fragment-index="2">Vend</span> (P.S. They're awesome!)
+                        </li>
+                        <li class="fragment">Been coding for about 5 years</li>
+                        <li class="fragment">Fell in love with JavaScript over 2 years ago</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>Covering...</h2>
                     <ul>
-                        <li>MVC - You might have heard of it...</li>
-                        <li>How Backbone.js does it</li>
-                        <li>Creating our own app</li>
+                        <li class="fragment">MVC - You might have heard of it...</li>
+                        <li class="fragment">How Backbone.js does it</li>
+                        <li class="fragment">Creating our own Todo App</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>MVC</h2>
                     <ul>
-                        <li>M is for <span class="fragment" style="color: blue;">Model</span></li>
-                        <li>V is for <span class="fragment" style="color: blue;">View</span></li>
-                        <li>C is for <span class="fragment" style="color: red;">COLLECTION!</span></li>
+                        <li>M is for <span class="fragment" data-fragment-index="1"><span class="fragment highlight-blue" data-fragment-index="1">Model</span></span></li>
+                        <li>V is for <span class="fragment" data-fragment-index="2"><span class="fragment highlight-blue" data-fragment-index="2">View</span></span></li>
+                        <li>C is for <span class="fragment" data-fragment-index="3"><span class="fragment highlight-red" data-fragment-index="3">Collection</span></span></li>
                     </ul>
-                    <p class="fragment">
+                    <p class="fragment" style="margin-top: 30px;"><small>
                         There are Controllers, But in this case, we are simplifying things by just talking about interactions between a collection of models and their views via custom and DOM events
-                    </p>
+                    </small></p>
                 </section>
 
                 <section>
                     <section data-transition="none">
                         <h2>Model</h2>
-                        <p>Representation of Data</p>
+                        <p><span class="fragment" data-fragment-index="1"><span class="fragment highlight-blue" data-fragment-index="1">Representation of Data</span</span></p>
                         <ul>
-                            <li>Is reusable</li>
-                            <li>Can be persisted</li>
-                            <li>Can throw custom events</li>
+                            <li class="fragment">Is reusable</li>
+                            <li class="fragment">Can be persisted</li>
+                            <li class="fragment">Can throw events</li>
                         </ul>
                     </section>
 
@@ -109,16 +111,11 @@
                 <section>
                     <section data-transition="none">
                         <h2>Collection</h2>
-                        <p>A collection of... <span class="fragment">MODELS!</span></p>
+                        <p>A collection of... <span class="fragment" data-fragment-index="1"><span class="fragment highlight-blue" data-fragment-index="1">models!</span></span></p>
                         <ul>
-                            <li>Great for performing manipulations and computations on multiple models</li>
-                            <li>Can be persisted</li>
-                            <li>A great listener!
-                                <ul>
-                                    <li>Can listen to attribute changes on it's models</li>
-                                    <li>Can listen to custom events thrown by models</li>
-                                </ul>
-                            </li>
+                            <li class="fragment">Can performing manipulations and computations on its models</li>
+                            <li class="fragment">Can be persisted</li>
+                            <li class="fragment">A great listener!</li>
                         </ul>
                     </section>
 
@@ -150,11 +147,11 @@
                 <section>
                     <section data-transition="none">
                         <h2>View</h2>
-                        <p>Links the DOM and the models</p>
+                        <p>A link between the model/collection and the... <span class="fragment" data-fragment-index="1"><span class="fragment highlight-blue" data-fragment-index="1">DOM!</span></span></p>
                         <ul>
-                            <li>Manipulate the DOM based on model state and attributes</li>
-                            <li>Updates models based on user interaction with the DOM</li>
-                            <li>It's all about events!</li>
+                            <li class="fragment">Manipulate the DOM based on model state and attributes</li>
+                            <li class="fragment">Updates models based on user interaction with the DOM</li>
+                            <li class="fragment">It's all about events!</li>
                         </ul>
                     </section>
 
@@ -224,8 +221,8 @@ App.Todo = Backbone.Model.extend({
         complete: false
     },
 
-    doSomething: function () {
-        // I should really write a todo to finish this function...
+    doSomething: function() {
+        // I should really write a Todo to finish this function...
     }
 
 });
@@ -242,16 +239,16 @@ Model.get('complete');
 
 
 // Setting attributes within model.
-Model.set('complete', true);
+Model.set('title', 'Finish talking already!');
 
 
-// Saving attributes to the synced database.
+// Saving a newly set attribute to the synced database.
 Model.save({
-    complete: true
+    'title': 'Finish talking already!'
 });
 
 
-// Destroys the model (Also removes it from any collections it belongs to)
+// Destroys the model (Also removes it from any collections it belongs to).
 Model.destroy();
                             </code>
                         </pre>
@@ -277,7 +274,7 @@ App.TodoCollection = Backbone.Collection.extend({
                             <code class="javascript" data-trim contenteditable>
 // Fetching models from synced database.
 Collection.fetch({
-    success: function (collectionOfThings) {
+    success: function(collectionOfThings) {
         // Should really do something with these things...
     }
 });
@@ -308,7 +305,7 @@ App.TodoView = Backbone.View.extend({
     },
 
     toggleComplete: function() {
-        // OK I'm done!
+        // I should toggle my models complete attribute...
     }
 
 });
@@ -320,15 +317,15 @@ App.TodoView = Backbone.View.extend({
                         <h2>Some useful functions</h2>
                         <pre>
                             <code class="javascript" data-trim contenteditable>
-// Access the views model
+// Access the views model.
 View.model;
 
 
-// Access the views collection
+// Access the views collection.
 View.collection;
 
 
-// Listen to model attribute change events
+// Listen to model attribute change events.
 View.listenTo(this.model, 'change', this.render);
                             </code>
                         </pre>
@@ -355,11 +352,11 @@ View.listenTo(this.model, 'change', this.render);
                         <h2>Some useful functions</h2>
                         <pre>
                             <code class="php" data-trim contenteditable>
-# Pass attribute value
+# Pass attribute value.
 <%= title %>
 
 
-# Pass custom value based on properties boolean value
+# Pass custom value based on properties boolean value.
 <%= complete ? 'complete' : ''%>
                             </code>
                         </pre>
@@ -369,14 +366,17 @@ View.listenTo(this.model, 'change', this.render);
                         <h2>Global Events</h2>
                         <pre>
                             <code class="javascript" data-trim contenteditable>
-// Binding to a global event.
-Vent.bind('some-global-event', function (data) {
+Backbone.Event.bind('some-global-event', function(data) {
     // Oh! I'll do something with that data now!
 });
 
 
 // Triggering a global event.
-Vent.trigger('some-global-event', { data: 'Everything is awesome!' });
+Backbone.Event.trigger('some-global-event', {
+
+    data: 'Just wanted to tell you, you are awesome!'
+
+});
                             </code>
                         </pre>
                     </section>
