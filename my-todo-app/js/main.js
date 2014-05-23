@@ -14,6 +14,8 @@
         $('#todo-list-container').html(todoCollectionView.el);
 
         $('#new-todo').on('submit', function(event) {
+            event.preventDefault();
+
             var todoFormNode  = $(event.target),
                 todoTitleNode = todoFormNode.find('.new-todo-input'),
                 todoTitle     = todoTitleNode.val();
@@ -28,8 +30,6 @@
             }
 
             todoTitleNode.val('');
-
-            event.preventDefault();
         });
     };
 

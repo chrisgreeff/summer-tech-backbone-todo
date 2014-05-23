@@ -11,7 +11,7 @@
         initialize: function() {
             var todos = this.collection;
 
-            // 5b. TO COMPLETE
+            // 4b. TO COMPLETE
             // --------------
             // From here we need to make sure that we are listening to the global event fired
             // from the model. We can do that by using the `App.Vent.bind();` function. Once

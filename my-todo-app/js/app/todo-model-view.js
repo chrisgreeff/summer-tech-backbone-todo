@@ -41,7 +41,7 @@
         },
 
         removeTodo: function() {
-            // 5a. TO COMPLETE
+            // 4a. TO COMPLETE
             // --------------
             // We're going to be a little bit different here. Rather than the model handling the
             // model handling the remove itself, we want to fire a global event for the todo
@@ -61,13 +61,13 @@
         },
 
         toggleEditing: function() {
-            // 4a. TO COMPLETE
+            // 5a. TO COMPLETE
             // --------------
             // Similar to what we did in 4., we want the ability to toggle the editing of
             // a todo. See if you can do this one on your own!
             //
             // NOTE: You're going to need to add an 'editing' class to the .toggle-edit
-            // element.
+            // element. Remember to use the same technique you used for `complete`;
         },
 
         updateTitle: function () {

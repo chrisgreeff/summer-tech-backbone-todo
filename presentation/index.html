@@ -43,12 +43,12 @@
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
                 <section>
-                    <h1>Summer of Tech</h1>
+                    <h2>Summer of Tech</h2>
                     <h3>MVC wit Backbone</h3>
                 </section>
 
                 <section>
-                    <h1>Hi!</h1>
+                    <h2>Hi!</h2>
                     <p>Little about me...</p>
                     <ul>
                         <li>Currently working at Vend (They're awesome!)</li>
@@ -58,7 +58,7 @@
                 </section>
 
                 <section>
-                    <h1>Covering...</h1>
+                    <h2>Covering...</h2>
                     <ul>
                         <li>MVC - You might have heard of it...</li>
                         <li>How Backbone.js does it</li>
@@ -67,7 +67,7 @@
                 </section>
 
                 <section>
-                    <h1>MVC</h1>
+                    <h2>MVC</h2>
                     <ul>
                         <li>M is for <span class="fragment" style="color: blue;">Model</span></li>
                         <li>V is for <span class="fragment" style="color: blue;">View</span></li>
@@ -80,7 +80,7 @@
 
                 <section>
                     <section data-transition="none">
-                        <h1>Model</h1>
+                        <h2>Model</h2>
                         <p>Representation of Data</p>
                         <ul>
                             <li>Is reusable</li>
@@ -90,21 +90,25 @@
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/Model.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/Model.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/ModelAttributes.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/ModelAttributes.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/ModelAttributeChange.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/ModelAttributeChange.svg" style="border: none; box-shadow: none; background: none;">
+                    </section>
+
+                    <section data-transition="none">
+                        <img class="image" width="700" src="images/ModelCustomEvent.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
                 </section>
 
                 <section>
                     <section data-transition="none">
-                        <h1>Collection</h1>
+                        <h2>Collection</h2>
                         <p>A collection of... <span class="fragment">MODELS!</span></p>
                         <ul>
                             <li>Great for performing manipulations and computations on multiple models</li>
@@ -119,33 +123,33 @@
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/Collection.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/Collection.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/CollectionModelAttrChange.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/CollectionModelAttrChange.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/CollectionModelAttrChangeListen.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/CollectionModelAttrChangeListen.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/CollectionModelCustomEvent.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/CollectionModelCustomEvent.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/CollectionModelCustomEventListen.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/CollectionModelCustomEventListen.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/CollectionModelRemove.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/CollectionModelRemove.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
                 </section>
 
                 <section>
                     <section data-transition="none">
-                        <h1>View</h1>
+                        <h2>View</h2>
                         <p>Links the DOM and the models</p>
                         <ul>
                             <li>Manipulate the DOM based on model state and attributes</li>
@@ -155,29 +159,228 @@
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/ViewModel.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/ViewModel.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/ViewListenDOM.png" style="border: none; box-shadow: none; background: none;">
-                    </section>
-
-
-                    <section data-transition="none">
-                        <img class="image" width="700" src="images/ViewDomInteraction.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/ViewListenModel.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/ViewDomInteractionCatch.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/ViewDomInteraction.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/ViewDomInteractionModelUpdate.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/ViewDomInteractionCatch.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
 
                     <section data-transition="none">
-                        <img class="image" width="700" src="images/ViewListenModel.png" style="border: none; box-shadow: none; background: none;">
+                        <img class="image" width="700" src="images/ViewDomInteractionModelUpdate.svg" style="border: none; box-shadow: none; background: none;">
                     </section>
+
+                </section>
+
+                <section>
+                    <section data-transition="none">
+                        <h2>Let's take a real example</h2>
+                        <p>This is what you're hopefully going to make by the end of this session...</p>
+                    </section>
+
+                    <section data-transition="none">
+                        <img class="image" width="700" src="images/TodoListImage.svg" style="border: none; box-shadow: none; background: none;">
+                    </section>
+
+                    <section data-transition="none">
+                        <img class="image" width="700" src="images/TodoListImageCollection.svg" style="border: none; box-shadow: none; background: none;">
+                    </section>
+
+                    <section data-transition="none">
+                        <img class="image" width="700" src="images/TodoListImageModel.svg" style="border: none; box-shadow: none; background: none;">
+                    </section>
+
+                    <section data-transition="none">
+                        <img class="image" width="700" src="images/TodoListImageModelAttributes.svg" style="border: none; box-shadow: none; background: none;">
+                    </section>
+
+                    <section data-transition="none">
+                        <img class="image" width="700" src="images/TodoListImageModelCustomEvent.svg" style="border: none; box-shadow: none; background: none;">
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Enough of the pretty stuff!</h2>
+                        <p>Let's take a look at some code!</p>
+                    </section>
+
+                    <section>
+                        <h2>Models</h2>
+                        <pre>
+                            <code class="javascript" data-trim contenteditable>
+App.Todo = Backbone.Model.extend({
+
+    defaults: {
+        title: '',
+        complete: false
+    },
+
+    doSomething: function () {
+        // I should really write a todo to finish this function...
+    }
+
+});
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Some useful functions</h2>
+                        <pre>
+                            <code class="javascript" data-trim contenteditable>
+// Getting attributes within model.
+Model.get('complete');
+
+
+// Setting attributes within model.
+Model.set('complete', true);
+
+
+// Saving attributes to the synced database.
+Model.save({
+    complete: true
+});
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Collections</h2>
+                        <pre>
+                            <code class="javascript" data-trim contenteditable>
+App.TodoCollection = Backbone.Collection.extend({
+
+    // Reference to the model of this collection.
+    model: App.Todo
+
+});
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Some useful functions</h2>
+                        <pre>
+                            <code class="javascript" data-trim contenteditable>
+// Fetching models from synced database.
+Collection.fetch({
+    success: function (collectionOfThings) {
+        // Should really do something with these things...
+    }
+});
+
+
+// Creating and adding new model to the collection.
+Collection.create({
+    title: 'Create Todo List'
+});
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Views</h2>
+                        <pre>
+                            <code class="javascript" data-trim contenteditable>
+App.TodoView = Backbone.View.extend({
+
+    initialize: function() {
+        // First function that is called when you create a new view.
+        // Great for setting up event listeners.
+    },
+
+    // DOM events mapping to functions within this view.
+    events: {
+        'click .toggle-complete': 'toggleComplete'
+    },
+
+    toggleComplete: function() {
+        // OK I'm done!
+    }
+
+});
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Some useful functions</h2>
+                        <pre>
+                            <code class="javascript" data-trim contenteditable>
+// Access the views model
+View.model;
+
+
+// Access the views collection
+View.collection;
+
+
+// Listen to model attribute change events
+View.listenTo(this.model, 'change', this.render);
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Templates</h2>
+                        <pre>
+                            <code class="php" data-trim contenteditable>
+<div id="<%= id %>" class="<%= complete ? 'complete' : '' %>">
+
+    <a class="toggle-complete" href="javascript:void(0)"></a>
+
+    <span class="todo-label"><%= title %></span>
+
+    <a class="remove-todo" href="javascript:void(0)"></a>
+
+</div>
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Some useful functions</h2>
+                        <pre>
+                            <code class="php" data-trim contenteditable>
+# Pass attribute value
+<%= title %>
+
+
+# Pass custom value based on properties boolean value
+<%= complete ? 'complete' : ''%>
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <h2>Global Events</h2>
+                        <pre>
+                            <code class="javascript" data-trim contenteditable>
+// Binding to a global event.
+Vent.bind('some-global-event', function (data) {
+    // Oh! I'll do something with that data now!
+});
+
+
+// Triggering a global event.
+Vent.trigger('some-global-event', { data: 'Everything is awesome!' });
+                            </code>
+                        </pre>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h2>Ok! Enough chit-chat! Let's code!</h2>
                 </section>
 
             </div>

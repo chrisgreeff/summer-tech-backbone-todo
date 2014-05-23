@@ -22,7 +22,7 @@
         },
 
         toggleEditing: function () {
-            // 4b. TO COMPLETE
+            // 5b. TO COMPLETE
             // --------------
             // See if you can do this one on your own!
             //

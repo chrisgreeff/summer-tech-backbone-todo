@@ -21,6 +21,8 @@
         // Finally we need to setup our new todo form to create a new todo, and add it to
         // our collection when the form is submitted.
         $('#new-todo').on('submit', function(event) {
+            event.preventDefault();
+
             var todoFormNode  = $(event.target),
                 todoTitleNode = todoFormNode.find('.new-todo-input'),
                 todoTitle     = todoTitleNode.val();
@@ -36,7 +38,6 @@
 
             todoTitleNode.val('');
 
-            event.preventDefault();
         });
     };
 
