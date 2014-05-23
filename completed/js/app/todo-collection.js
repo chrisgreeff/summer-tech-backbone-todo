@@ -14,7 +14,7 @@
 
         // We are going to be using localforage to persist our todos in the browsers built in
         // database.
-        sync: Backbone.localforage.sync('MyTodos'),
+        sync: Backbone.localforage.sync('CompleteMyTodos'),
 
         // We need to reference the model of this collection. In this case, this is a collection of
         // Todos.
