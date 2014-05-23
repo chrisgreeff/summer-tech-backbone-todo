@@ -65,6 +65,9 @@
             // --------------
             // Similar to what we did in 4., we want the ability to toggle the editing of
             // a todo. See if you can do this one on your own!
+            //
+            // NOTE: You're going to need to add an 'editing' class to the .toggle-edit
+            // element.
         },
 
         updateTitle: function () {

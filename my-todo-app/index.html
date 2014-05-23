@@ -5,7 +5,6 @@
     <title>My Todo App</title>
     <link rel="stylesheet" href="styles/main.css">
 
-    <!-- Loading all our dependencies including jQuery, Backbone and Underscore -->
     <script src="js/vendor/jquery-2.1.0.min.js"></script>
     <script src="js/vendor/underscore-1.6.0.min.js"></script>
     <script src="js/vendor/underscore-mixins.js"></script>
@@ -18,55 +17,50 @@
 
         <section class="todo-app-container">
 
-            <!-- The header... nothing special about this one really... -->
             <header class="todo-app-header">
                 <h1>My Todo App</h1>
             </header>
 
-            <!-- This is the form that, when submitted, will create a shiny new todo for us -->
             <form id="new-todo">
                 <input class="new-todo-input" type="text" placeholder="What do I need to do?">
                 <button class="new-todo-btn" type="submit" title="Create Todo">Create</button>
             </form>
 
-            <!-- This is where all our todos are going to be listed -->
             <div id="todo-list-container"></div>
 
         </section>
     </main>
 
-    <!-- We can define a template for our todo item in a script block. This has a little more
-         goodness than regular markup which allows us to do some cool stuff -->
     <script type="text/template" id="todo-item-template">
 
-        <!-- The container of the todo has a unique id, which allows the TodoCollectionView to
-             get a handle on it -->
+        <!--
+        // 3d. TO COMPLETE
+        // --------------
+        // Finally we again need the template to add the appropriate property to the element
+        // for our styles to kick in. In this case, we want to add the 'complete' class to
+        // the todo-item. We can do this using the `<%= complete ? 'complete' : '' %>` helper.
+        -->
         <div id="<%= id %>" class="todo-item">
 
-            <!-- We can toggle the complete state of a todo -->
             <a class="toggle-complete table-cell" href="javascript:void(0)"></a>
 
-            <!-- We can update the title of a todo
-
-                 2b. TO COMPLETE
-                 --------------
-                 When we add a new todo to the list, we can pass its properties to the template
-                 associated with the model. In this case, in the label we want to pass the title
-                 of the todo (You can pass properties using the `<%= propertyName %>` helper.
-
+            <!--
+            // 2b. TO COMPLETE
+            // --------------
+            // When we add a new todo to the list, we can pass its properties to the template
+            // associated with the model. In this case, in the label we want to pass the 'title'
+            // of the todo (You can pass properties using the `<%= propertyName %>` helper.
             -->
             <div class="table-cell todo-title toggle-edit">
                 <span class="todo-label"></span>
                 <input class="todo-title-edit" type="text" value="">
             </div>
 
-            <!-- And we can update the title of a todo -->
             <a class="remove-todo table-cell icon-remove" href="javascript:void(0)"></a>
 
         </div>
     </script>
 
-    <!-- Loading our models, collections, views, and finally loading the initialization script -->
     <script src="js/app/app.js"></script>
     <script src="js/app/vent.js"></script>
     <script src="js/app/todo-model.js"></script>
